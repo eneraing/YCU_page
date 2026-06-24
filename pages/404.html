@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost Timeline | 白羽大学</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lost-page { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-polar-dark); color: var(--text-on-dark); position: relative; overflow: hidden; }
+    .lost-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80'); background-size: cover; background-position: center; opacity: 0.25; animation: slow-zoom 20s ease-in-out infinite alternate; }
+    @keyframes slow-zoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+    .lost-content { position: relative; z-index: 1; max-width: 560px; padding: 2rem; }
+    .lost-feather { width: 48px; height: 48px; margin: 0 auto 2rem; opacity: 0.6; animation: float-feather 3s ease-in-out infinite; }
+    @keyframes float-feather { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(5deg); } }
+    .lost-code { font-family: var(--font-display); font-size: clamp(4rem, 10vw, 7rem); color: var(--color-island-blue); letter-spacing: 0.05em; line-height: 1; margin-bottom: 1rem; font-weight: 300; }
+    .lost-subtitle { font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 2rem; }
+    .lost-quote { font-size: 1.1rem; line-height: 2; opacity: 0.75; margin-bottom: 2.5rem; font-style: italic; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .lost-quote p { margin-bottom: 0.5rem; }
+    .lost-rail { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, rgba(129,212,250,0.3), transparent); }
+    .lost-return { display: inline-block; color: var(--color-island-blue); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.15em; border-bottom: 1px solid var(--color-island-blue); padding-bottom: 4px; transition: all 0.3s; }
+    .lost-return:hover { color: var(--color-white); border-color: var(--color-white); }
+    .cursor-trail { position: fixed; pointer-events: none; z-index: 9998; animation: trail-fade 1.5s ease-out forwards; }
+    @keyframes trail-fade { 0% { opacity: 1; transform: translate(0,0) rotate(0deg) scale(1); } 100% { opacity: 0; transform: translate(var(--dx),var(--dy)) rotate(var(--sp)) scale(0.3); } }
+  </style>
+</head>
+<body>
+  <div class="lost-page">
+    <div class="lost-bg"></div>
+    <div class="lost-content">
+      <div class="lost-feather">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4 C21 12, 10 16, 10 24 C10 34, 24 44, 24 44 C24 44, 38 34, 38 24 C38 16, 27 12, 24 4Z" fill="none" stroke="rgba(129,212,250,0.6)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="lost-code">404</div>
+      <div class="lost-subtitle">Lost Timeline</div>
+      <div class="lost-quote">
+        <p>"这里不是错误。"</p>
+        <p>"只是另一个没有发生的夏天。"</p>
+      </div>
+      <a href="../index.html" class="lost-return">返回首页 · Return to YCU</a>
+    </div>
+    <div class="lost-rail"></div>
+  </div>
+  <script>
+    document.addEventListener('mousemove',function(e){var t=document.createElement('div');t.className='cursor-trail';t.textContent='\u2727';t.style.left=e.clientX+'px';t.style.top=e.clientY+'px';t.style.color='rgba(129,212,250,0.5)';t.style.fontSize=(8+Math.random()*6)+'px';t.style.setProperty('--dx',(Math.random()*30-15)+'px');t.style.setProperty('--dy',(Math.random()*30+8)+'px');t.style.setProperty('--sp',(Math.random()*360-180)+'deg');document.body.appendChild(t);setTimeout(function(){t.remove()},1500)});
+  </script>
+</body>
+</html>

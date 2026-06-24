@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiroha OS | 白羽大学 Shiroha University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #080c14; color: #b8c5d6; font-family: 'Noto Sans SC', sans-serif; overflow-x: hidden; }
+    
+    .os-container { min-height: 100vh; position: relative; }
+    
+    /* Scanline overlay */
+    .os-scanlines { position: fixed; inset: 0; pointer-events: none; z-index: 100; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px); }
+    
+    /* Starfield */
+    .os-stars { position: fixed; inset: 0; z-index: 0; }
+    .os-star { position: absolute; background: #fff; border-radius: 50%; animation: os-twinkle var(--dur) ease-in-out infinite; animation-delay: var(--delay); opacity: 0; }
+    @keyframes os-twinkle { 0%,100% { opacity: 0.1; } 50% { opacity: 0.6; } }
+    
+    /* Header */
+    .os-header { position: relative; z-index: 2; padding: 3rem 2rem 1rem; text-align: center; }
+    .os-logo { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.4em; color: #3a5f8a; margin-bottom: 1rem; }
+    .os-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: #81D4FA; font-weight: 300; letter-spacing: 0.08em; }
+    .os-subtitle { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #4a6a8a; letter-spacing: 0.3em; margin-top: 0.8rem; }
+    
+    /* Main Terminal */
+    .os-terminal-wrap { position: relative; z-index: 2; max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+    .os-terminal { background: rgba(8,12,20,0.9); border: 1px solid rgba(129,212,250,0.12); border-radius: 6px; overflow: hidden; box-shadow: 0 0 60px rgba(129,212,250,0.04), inset 0 0 60px rgba(0,0,0,0.5); }
+    .os-term-bar { background: rgba(129,212,250,0.06); padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(129,212,250,0.08); }
+    .os-term-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .os-term-dot.r { background: #D32F2F; } .os-term-dot.y { background: #C9A96E; } .os-term-dot.g { background: #4a8; }
+    .os-term-title { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #3a5f8a; margin-left: 0.5rem; letter-spacing: 0.15em; }
+    .os-term-body { padding: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.9; }
+    .os-prompt { color: #C9A96E; }
+    .os-cmd { color: #fff; }
+    .os-out { color: rgba(129,212,250,0.7); margin-left: 1.2rem; margin-bottom: 0.3rem; }
+    .os-out.dim { opacity: 0.4; }
+    .os-cursor { display: inline-block; width: 8px; height: 15px; background: #81D4FA; animation: os-blink 1s step-end infinite; vertical-align: text-bottom; margin-left: 2px; }
+    @keyframes os-blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+    
+    /* Data stream columns */
+    .os-grid { position: relative; z-index: 2; max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .os-card { background: rgba(129,212,250,0.03); border: 1px solid rgba(129,212,250,0.08); border-radius: 4px; padding: 1.5rem; transition: border-color 0.3s; }
+    .os-card:hover { border-color: rgba(129,212,250,0.2); }
+    .os-card-icon { font-size: 1.2rem; margin-bottom: 0.8rem; opacity: 0.6; }
+    .os-card h3 { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; color: #81D4FA; margin-bottom: 0.6rem; text-transform: uppercase; }
+    .os-card p { font-size: 0.8rem; color: #6a80a0; line-height: 1.7; }
+    .os-card .stat { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #3a5f8a; margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid rgba(129,212,250,0.06); }
+    
+    /* Philosophy section */
+    .os-phil { position: relative; z-index: 2; max-width: 700px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+    .os-phil-line { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #2a4a6a; letter-spacing: 0.3em; margin-bottom: 2rem; }
+    .os-phil p { font-size: 0.9rem; color: #5a7898; line-height: 2; margin-bottom: 1.5rem; }
+    .os-phil .highlight { color: #81D4FA; }
+    
+    /* Back link */
+    .os-back { position: relative; z-index: 2; text-align: center; padding: 2rem 1.5rem 4rem; }
+    .os-back a { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #3a5f8a; text-decoration: none; letter-spacing: 0.2em; transition: color 0.3s; }
+    .os-back a:hover { color: #81D4FA; }
+    
+    /* Data rain (right side decoration) */
+    .os-datarain { position: fixed; right: 2rem; top: 50%; transform: translateY(-50%); z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: rgba(129,212,250,0.06); line-height: 1.3; pointer-events: none; white-space: pre; }
+    
+    /* Bottom status bar */
+    .os-status { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: rgba(8,12,20,0.95); border-top: 1px solid rgba(129,212,250,0.08); padding: 0.4rem 1.5rem; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #3a5f8a; letter-spacing: 0.1em; }
+    .os-status span { opacity: 0.5; }
+    .os-status .ok { color: #4a8; opacity: 0.7; }
+    
+    @media (max-width: 768px) {
+      .os-grid { grid-template-columns: 1fr; }
+      .os-datarain { display: none; }
+      .os-terminal-wrap { margin: 1rem auto; }
+      .os-term-body { padding: 1.2rem; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="os-scanlines"></div>
+  
+  <!-- Starfield -->
+  <div class="os-stars" id="os-stars"></div>
+  
+  <!-- Data rain -->
+  <div class="os-datarain" id="os-datarain"></div>
+  
+  <div class="os-container">
+    <!-- Header -->
+    <div class="os-header">
+      <div class="os-logo">SYS://YCU.NODE.01</div>
+      <h1 class="os-title">Shiroha OS</h1>
+      <div class="os-subtitle">KERNEL v1.0.2048 · UPTIME: SINCE FOUNDING</div>
+    </div>
+    
+    <!-- Terminal -->
+    <div class="os-terminal-wrap">
+      <div class="os-terminal">
+        <div class="os-term-bar">
+          <span class="os-term-dot r"></span><span class="os-term-dot y"></span><span class="os-term-dot g"></span>
+          <span class="os-term-title">shiroha@ycu — bash — 80×24</span>
+        </div>
+        <div class="os-term-body">
+          <p><span class="os-prompt">shiroha@ycu:~$</span> <span class="os-cmd">whoami</span></p>
+          <p class="os-out">user_id: 2048-0001-&#x25A1;&#x25A1;&#x25A1;&#x25A1;-&#x25A1;&#x25A1;&#x25A1;</p>
+          <p class="os-out dim">last login: the day you arrived</p>
+          <p style="margin-top:1rem;"><span class="os-prompt">shiroha@ycu:~$</span> <span class="os-cmd">system --status</span></p>
+          <p class="os-out">Kernel: 2048.6-RELEASE · Arch: x64-feather</p>
+          <p class="os-out">Nodes: Yingtian [ONLINE] | Murmansk [ONLINE] | Yakushima [ONLINE]</p>
+          <p class="os-out">Memory Bank: 12,847,392 entries · oldest: 2048-09-01 06:12:03 UTC</p>
+          <p class="os-out">Active sessions: <span id="os-sessions">--</span></p>
+          <p style="margin-top:1rem;"><span class="os-prompt">shiroha@ycu:~$</span> <span class="os-cmd">cat /etc/motto</span></p>
+          <p class="os-out">为世界上所有的美好而战。</p>
+          <p class="os-out dim">Fight for all the beauty in this world.</p>
+          <p style="margin-top:1rem;"><span class="os-prompt">shiroha@ycu:~$</span> <span class="os-cmd">_</span><span class="os-cursor"></span></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Data grid -->
+    <div class="os-grid">
+      <div class="os-card">
+        <div class="os-card-icon">&#x2B21;</div>
+        <h3>Identity Protocol</h3>
+        <p>每个Shiroha ID是一枚不可复制的密钥对。公钥用于标识——你的姓名、学籍、课程。私钥永远存储在你自己的终端上，用于加密一切你标记为「私人」的数据。系统管理员无法阅读你的记忆银行，就像邮局无法拆阅一封封口的信。</p>
+        <div class="stat">ENTROPY: 256-bit · ALGORITHM: Ed25519-feather</div>
+      </div>
+      <div class="os-card">
+        <div class="os-card-icon">&#x25A3;</div>
+        <h3>The Library</h3>
+        <p>数字馆藏与实体库互为镜像。每一本纸质书的数字化副本在Shiroha OS中拥有一枚对应的哈希值；每一次纸本书被取出或归还，哈希值加一。书架上空了，哈希值还在。有人借走了一本1954年版的《雪国》，但哈希值告诉服务器：它还存在。</p>
+        <div class="stat">DIGITAL: 3.2M volumes · PHYSICAL: 187,000 · HASH: SHA-3</div>
+      </div>
+      <div class="os-card">
+        <div class="os-card-icon">&#x25C9;</div>
+        <h3>Cross-node Classroom</h3>
+        <p>三个校区的课程通过同步协议在同一时间轴上展开。莫斯科港的极夜与鸟白岛的午后之间有一条加密隧道，延迟约240毫秒。这个数字被刻在每间远程教室的门框上：240ms——光从科拉半岛到屋久岛以南所需的时间。</p>
+        <div class="stat">LATENCY: 240ms · PROTOCOL: YCU-TCP · ENCRYPTION: TLS 1.3+</div>
+      </div>
+      <div class="os-card">
+        <div class="os-card-icon">&#x25CB;</div>
+        <h3>Memory Bank</h3>
+        <p>本校最安静的服务。每个用户拥有一个加密分区，写入速度不限，但读取时需要等待三秒——系统在这三秒内不做任何数据操作，只是在屏幕上显示一行字：「你正在读取的，是某个人选择永久保存的东西。」这是全系统唯一一段硬编码的UI文本，无法被本地化，无法被跳过。工程师拒绝解释为什么是三秒。</p>
+        <div class="stat">ENTRIES: 12.8M · ENCRYPTION: AES-256-GCM · READ DELAY: 3s · REASON: UNKNOWN</div>
+      </div>
+      <div class="os-card">
+        <div class="os-card-icon">&#x25E6;</div>
+        <h3>Research Mesh</h3>
+        <p>47个研究机构通过一个去中心化的协作文档网络连接。每篇论文的每一次提交都生成一个不可篡改的版本快照。系统会自动在每份快照的元数据中附加以下字段：提交时的室外温度、提交者所在城市当天的日照时长，以及提交前五分钟内系统麦克风采集到的平均分贝值。没有人要求过这些字段。但也没有人提出要删除它们。</p>
+        <div class="stat">NODES: 47 · REPLICATION: 3x · SNAPSHOT INTERVAL: per-commit</div>
+      </div>
+      <div class="os-card">
+        <div class="os-card-icon">&#x29BF;</div>
+        <h3>Century Mailbox</h3>
+        <p>一个基于定时释放协议的延迟投递系统。信被写入后进入加密等待队列，密钥的一半存储在应天府地下恒温库的离线介质中，另一半存储在莫斯科港研究塔顶层的固态存储器里。要同时破坏两个物理位置才能提前读取任何一封信。系统维护团队五人，门上贴着一张纸：「不要试图看信。看了你也看不懂，因为没有收信人当时的体温。」</p>
+        <div class="stat">QUEUED: 18,432 · DELIVERED: 2,107 · OLDEST PENDING: 2058-10-20</div>
+      </div>
+    </div>
+    
+    <!-- Philosophy -->
+    <div class="os-phil">
+      <div class="os-phil-line">// PHILOSOPHY</div>
+      <p>大多数操作系统以山脉或动物命名。本系统以一片<span class="highlight">羽毛</span>命名。</p>
+      <p>羽毛在所有航空器结构材料中第一个被淘汰。但它至今仍然是人类最早关于「飞翔」这一愿望的<span class="highlight">唯一物证</span>。</p>
+      <p>Shiroha OS被设计成羽毛的样子：轻，不引人注目，但在掉落的过程中会让人停下来看。它的核心服务没有一样以效率为设计目标。记忆银行的<span class="highlight">三秒读取延迟</span>，研究快照中自动附加的<span class="highlight">室外温度和分贝值</span>，百年信箱的<span class="highlight">双地点物理密钥</span>——每一项都是对那个问题的回答：</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#81D4FA;margin-top:2rem;">"如果有一天，所有技术都消失了，<br>这个系统里还剩下什么值得被记住？"</p>
+    </div>
+    
+    <!-- Back -->
+    <div class="os-back">
+      <a href="../index.html">[ RETURN TO YCU ]</a>
+      <br><br>
+      <a href="about.html">ABOUT</a> &nbsp;/&nbsp; <a href="campuses.html">CAMPUSES</a> &nbsp;/&nbsp; <a href="academic.html">ACADEMIC</a>
+    </div>
+  </div>
+  
+  <!-- Status bar -->
+  <div class="os-status">
+    <span>NODE: YINGTIAN</span>
+    <span class="ok">SYS OK</span>
+    <span id="os-clock">--</span>
+  </div>
+  
+  <script>
+    // Starfield
+    (function() {
+      var c = document.getElementById('os-stars');
+      for (var i = 0; i < 80; i++) {
+        var s = document.createElement('div');
+        s.className = 'os-star';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.top = Math.random() * 100 + '%';
+        s.style.width = s.style.height = (1 + Math.random() * 2) + 'px';
+        s.style.setProperty('--dur', (2 + Math.random() * 4) + 's');
+        s.style.setProperty('--delay', Math.random() * 4 + 's');
+        c.appendChild(s);
+      }
+    })();
+    
+    // Data rain
+    (function() {
+      var r = document.getElementById('os-datarain');
+      var chars = '01abcdef';
+      var lines = [];
+      for (var i = 0; i < 40; i++) {
+        var line = '';
+        for (var j = 0; j < 25; j++) {
+          line += chars[Math.floor(Math.random() * chars.length)];
+          if (j > 0 && j % 6 === 0) line += ' ';
+        }
+        lines.push(line);
+      }
+      r.textContent = lines.join('\n');
+    })();
+    
+    // Clock
+    function tick() {
+      var d = new Date();
+      document.getElementById('os-clock').textContent = 
+        d.getUTCHours().toString().padStart(2,'0') + ':' + 
+        d.getUTCMinutes().toString().padStart(2,'0') + ':' + 
+        d.getUTCSeconds().toString().padStart(2,'0') + ' UTC';
+      document.getElementById('os-sessions').textContent = 
+        Math.floor(Math.random() * 300 + 800);
+    }
+    tick(); setInterval(tick, 1000);
+  </script>
+
+<script>
+  // BGM
+  (function(){
+    var a = new Audio('../audio/brand-new-sky.wav');
+    a.loop = true; a.volume = 0.3;
+    var p = document.createElement('div');
+    p.id = 'bgm-player';
+    p.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:1500;display:flex;align-items:center;gap:10px;background:rgba(8,12,20,0.92);border:1px solid rgba(129,212,250,0.1);padding:8px 18px;border-radius:50px';
+    var b = document.createElement('button');
+    b.style.cssText = 'width:36px;height:36px;border-radius:50%;border:none;background:rgba(129,212,250,0.12);color:#81D4FA;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0';
+    var svgP = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svgP.setAttribute('width','17');svgP.setAttribute('height','17');svgP.setAttribute('viewBox','0 0 24 24');svgP.setAttribute('fill','none');svgP.setAttribute('stroke','currentColor');svgP.setAttribute('stroke-width','2');
+    var poly = document.createElementNS('http://www.w3.org/2000/svg','polygon');poly.setAttribute('points','5 3 19 12 5 21 5 3');svgP.appendChild(poly);
+    var svgS = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svgS.setAttribute('width','17');svgS.setAttribute('height','17');svgS.setAttribute('viewBox','0 0 24 24');svgS.setAttribute('fill','none');svgS.setAttribute('stroke','currentColor');svgS.setAttribute('stroke-width','2');svgS.style.display='none';
+    var r1=document.createElementNS('http://www.w3.org/2000/svg','rect');r1.setAttribute('x','6');r1.setAttribute('y','4');r1.setAttribute('width','4');r1.setAttribute('height','16');
+    var r2=document.createElementNS('http://www.w3.org/2000/svg','rect');r2.setAttribute('x','14');r2.setAttribute('y','4');r2.setAttribute('width','4');r2.setAttribute('height','16');
+    svgS.appendChild(r1);svgS.appendChild(r2);
+    b.appendChild(svgP);b.appendChild(svgS);
+    var l=document.createElement('span');l.textContent='Brand New Sky';l.style.cssText='font-size:0.75rem;color:#5a7898;letter-spacing:0.04em';
+    p.appendChild(b);p.appendChild(l);document.body.appendChild(p);
+    function up(){if(a.paused){svgP.style.display='';svgS.style.display='none';b.style.background='rgba(129,212,250,0.12)'}else{svgP.style.display='none';svgS.style.display='';b.style.background='rgba(129,212,250,0.25)'}}
+    b.addEventListener('click',function(){if(a.paused){a.play()}else{a.pause()};up()});
+    a.addEventListener('play',up);a.addEventListener('pause',up);
+    function tryP(){a.play().then(up).catch(function(){up();['click','scroll','keydown','touchstart'].forEach(function(e){document.addEventListener(e,function(){if(a.paused){a.play();up()}},{once:true,passive:true})})})}a.addEventListener('canplaythrough',function(){var sp=sessionStorage.getItem('ycu-bgm-pos');if(sp&&parseFloat(sp)>0.5){a.addEventListener('seeked',function os(){a.removeEventListener('seeked',os);tryP()},{once:true});a.currentTime=parseFloat(sp)}else{tryP()}},{once:true})
+    tryP();
+    window.addEventListener('beforeunload',function(){if(a){sessionStorage.setItem('ycu-bgm-pos',a.currentTime||0)}});
+  })();
+</script>
+</body>
+</html>

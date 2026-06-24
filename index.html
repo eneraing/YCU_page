@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="白羽大学 Shiroha University — 在世界尽头，保存人类的夏天。">
+  <title>白羽大学 | Shiroha University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>&#x1FAB6;</text></svg>">
+</head>
+<body data-season="winter">
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="loading-feather">
+      <svg viewBox="0 0 40 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 0 C18 15, 8 30, 10 45 C12 55, 22 50, 20 40 C18 30, 12 35, 14 50 C16 65, 26 55, 24 45 C22 35, 16 40, 16 55 C16 70, 28 60, 26 50 C24 40, 18 48, 18 62 C18 78, 30 68, 28 58 C26 48, 20 55, 20 70 C20 85, 24 100, 20 120" fill="none" stroke="white" stroke-width="1.5"/>
+        <path d="M20 0 C22 15, 32 30, 30 45 C28 55, 18 50, 20 40 C22 30, 28 35, 26 50 C24 65, 14 55, 16 45 C18 35, 24 40, 24 55 C24 70, 12 60, 14 50 C16 40, 22 48, 22 62 C22 78, 10 68, 12 58" fill="none" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="loading-title">SHIROHA UNIVERSITY</div>
+    <div class="loading-subtitle">Initializing Shiroha OS<span class="dot-anim"></span></div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-logo-icon">
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M18 6 C17 10, 12 16, 13 22 C14 26, 20 24, 19 20 C18 16, 14 18, 15 24 C16 30, 22 27, 21 22 C20 17, 16 20, 17 26" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </span>
+      <span class="nav-logo-text">SHIROHA UNIVERSITY</span>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav-about">关于白大</a></li>
+      <li class="nav-item"><a href="pages/campuses.html" class="nav-link" data-i18n="nav-campuses">三大校区</a></li>
+      <li class="nav-item"><a href="pages/academic.html" class="nav-link" data-i18n="nav-academic">学术体系</a></li>
+      <li class="nav-item"><a href="pages/admissions.html" class="nav-link" data-i18n="nav-admissions">招生</a></li>
+      <li class="nav-item"><a href="pages/campus-life.html" class="nav-link" data-i18n="nav-life">校园生活</a></li>
+      <li class="nav-item"><a href="pages/shiroha-os.html" class="nav-link" data-i18n="nav-shiroha">Shiroha OS</a></li>
+      <li class="nav-item"><a href="pages/alumni.html" class="nav-link" data-i18n="nav-alumni">校友网络</a></li>
+    </ul>
+    <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav-overlay">
+    <button class="mobile-nav-close">&times;</button>
+    <a href="#about" data-i18n="nav-about">关于白大</a><a href="pages/campuses.html" data-i18n="nav-campuses">三大校区</a><a href="pages/academic.html" data-i18n="nav-academic">学术体系</a><a href="pages/admissions.html">招生</a><a href="pages/campus-life.html">校园生活</a><a href="pages/shiroha-os.html">Shiroha OS</a><a href="pages/alumni.html">校友网络</a>
+  </div>
+
+  <!-- APP CONTENT CONTAINER -->
+  <main id="app-content">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide hero-slide-1 active"></div>
+      <div class="hero-slide hero-slide-2"></div>
+      <div class="hero-slide hero-slide-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-subtitle-zh" data-i18n="hero-uni">白 羽 大 学</p>
+      <h1 class="hero-title">Shiroha<br>University</h1>
+      <p class="hero-quote" data-i18n="hero-quote">在世界尽头，保存人类的夏天。</p>
+      <a href="#about" class="btn btn-outline" data-i18n="hero-btn">探索白大</a>
+    </div>
+    <div class="hero-dots">
+      <span class="hero-dot active"></span><span class="hero-dot"></span><span class="hero-dot"></span>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span data-i18n="scroll">SCROLL</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="section section-cream" id="about">
+    <div class="mission-block fade-in">
+      <div class="section-label" data-i18n="sec-mission-label">创校理念</div>
+      <p class="mission-quote" data-i18n="mission-quote">
+        科学负责回答世界如何运行，<br>
+        哲学负责回答人为何存在，<br>
+        而白羽大学负责保存两者之间的空白。
+      </p>
+      <div class="section-divider"></div>
+      <p style="max-width:600px;margin:0 auto;color:var(--text-secondary);line-height:1.9;" data-i18n="mission-desc">
+        我们建立于一个简单的观察之上：当技术能够解释万物运行的机制，当思辨能够追问存在的意义，夹在两者之间的那片领地却在沉默中萎缩。那里存放着无法被算法归纳的感受、不能被论文穷尽的困惑、以及每一个普通人生命里那些说不清却极其珍贵的瞬间。本校的全部工作，就是在加速度的时代里为这些东西留出一片不受打扰的空间。
+      </p>
+      <div class="mission-multilang">
+        <span class="mission-lang"><span class="lang-label">中文</span>在世界尽头，保存人类的夏天。</span>
+        <span class="mission-lang"><span class="lang-label">English</span>Preserving Humanity's Summer at the Edge of the World.</span>
+        <span class="mission-lang"><span class="lang-label">日本語</span>世界の果てで、人類の夏を守る。</span>
+        <span class="mission-lang"><span class="lang-label">Русский</span>Мы храним лето человечества.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-about-label">关于白大</div>
+      <h2 class="section-title" data-i18n="about-title">2048年，四个领域的思想者决定做一件反常的事</h2>
+      <p class="section-subtitle" data-i18n="about-subtitle">那一年，人工智能已经能写出及格的诗，量子计算机开始拆解意识的物质基础，深空探测器带回了系外行星的大气样本。也正是在那一年，一座没有"应用前景"的大学在一个被人遗忘的旧址上动了第一锹土。</p>
+    </div>
+    <div class="about-grid">
+      <a href="pages/about.html#history" class="about-card fade-in" style="text-decoration:none;color:inherit;">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 data-i18n="card-history-title">创校历史</h3><p data-i18n="card-history-desc">东方哲学界、俄罗斯科学院、日本文学界与深空科学组织——四方学者在共同的忧虑下汇聚。他们担心的不是技术不够快，而是太快了以后，人类会忘记自己曾经为什么出发。</p>
+      </a>
+      <a href="pages/about.html#motto" class="about-card fade-in" style="text-decoration:none;color:inherit;">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3 data-i18n="card-motto-title">校训</h3><p data-i18n="card-motto-desc">为世界上所有的美好而战。九个字，来自一场关于文明脆弱性的漫长讨论。本校创校者们在建校前夕达成的唯一共识是：人类创造出来的最珍贵的东西——一首诗、一段记忆、一个夏天的傍晚——从来不是坚不可摧的。它们需要被守护，有时需要用一生的时间去守护。</p>
+      </a>
+      <a href="pages/about.html#worldview" class="about-card fade-in" style="text-decoration:none;color:inherit;">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 data-i18n="card-worldview-title">世界观</h3><p data-i18n="card-worldview-desc">我们不相信知识树只有一个方向。在白大，航天工程师和俳句诗人共用一间食堂，量子物理学家在茶道部学习如何等待水烧开。不是因为这样很有趣，而是因为这是完整的文明该有的样子。</p>
+      </a>
+      <a href="pages/about.html#shiroha" class="about-card fade-in" style="text-decoration:none;color:inherit;">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 8 C10 6, 14 6, 16 8 C14 12, 10 12, 8 8Z"/></svg>
+        </div>
+        <h3 data-i18n="card-shiroha-title">白羽精神</h3><p data-i18n="card-shiroha-desc">鸣濑白羽是这所学校做过的最私人的决定。当一个机构选择用一个人的形象来面对世界——而非盾徽、格言或大理石雕像——它在承认一件事：抽象的概念无法回答具体的问题。一盏灯比一句口号更能解释为什么要在冬天坚持下去。这正是白羽的全部意义。</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- THREE CAMPUSES -->
+  <section class="section section-dark">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-campuses-label">三大校区</div>
+      <h2 class="section-title" data-i18n="campuses-title">三处地点，一个问题</h2>
+      <p class="section-subtitle" data-i18n="campuses-subtitle">应天府的雪、莫斯科港的极光、鸟白岛的蝉——自然景观各不相同，但三座校区在追问同一件事：人类的情感与记忆，应该被放置在怎样的空间里？</p>
+    </div>
+    <div class="campuses-grid">
+      <a href="pages/campuses.html#yingtian" class="campus-card fade-in" style="text-decoration:none;">
+        <div class="campus-card-image" style="background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80');"></div>
+        <div class="campus-card-overlay">
+          <span class="campus-card-tag" data-i18n="campus-yingtian-tag">东方文明 × 俄罗斯建筑</span>
+          <h3 data-i18n="campus-yingtian-title">应天府校区</h3>
+          <p>苏州园林与诺夫哥罗德建筑的融合。雅罗斯拉夫尔风格的钟楼每日正午鸣响。半地下图书馆藏有基日岛木结构教堂的图纸摹本。</p>
+        </div>
+      </a>
+      <a href="pages/campuses.html#moscow" class="campus-card fade-in" style="text-decoration:none;">
+        <div class="campus-card-image" style="background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80');"></div>
+        <div class="campus-card-overlay">
+          <span class="campus-card-tag" data-i18n="campus-moscow-tag">极夜 × 科学</span>
+          <h3 data-i18n="campus-moscow-title">莫斯科港研究区</h3>
+          <p><span data-i18n="campus-moscow-desc">北纬六十九度，科拉半岛北岸。与摩尔曼斯克共享同一条冰封海岸线。极夜持续六十八天。研究塔同时容纳深空天线阵列和一间暖黄色阅览室。</span></p>
+        </div>
+      </a>
+      <a href="pages/campuses.html#torishiro" class="campus-card fade-in" style="text-decoration:none;">
+        <div class="campus-card-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80');"></div>
+        <div class="campus-card-overlay">
+          <span class="campus-card-tag" data-i18n="campus-torishiro-tag">夏日 × 记忆</span>
+          <h3 data-i18n="campus-torishiro-title">鸟白岛校区</h3>
+          <p><span data-i18n="campus-torishiro-desc">屋久岛以南九十海里。明治末年铺设的窄轨铁路尽头直接沉入海中。川端康成研究院在此设立——与鹿儿岛大学人文学部保持学术交流。</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="stats-bar fade-in">
+      <div class="stat-item"><div class="stat-number" data-target="2048">2048</div><div class="stat-label" data-i18n="stat-founded">创校年份</div></div>
+      <div class="stat-item"><div class="stat-number" data-target="3">3</div><div class="stat-label" data-i18n="stat-campuses">全球校区</div></div>
+      <div class="stat-item"><div class="stat-number" data-target="47">47</div><div class="stat-label" data-i18n="stat-institutes">研究机构</div></div>
+      <div class="stat-item"><div class="stat-number" data-target="12000">12,000+</div><div class="stat-label" data-i18n="stat-students">在校学生</div></div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC -->
+  <section class="section section-cream">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-academic-label">学术体系</div>
+      <h2 class="section-title" data-i18n="academic-title">在同一个校园里，庄子和齐奥尔科夫斯基可以是同事</h2>
+      <p class="section-subtitle"><span data-i18n="academic-subtitle">六个学院，四十七个研究机构。岳麓书院与计算机与数学基础研究所联合开设形式系统与古代逻辑的交叉课程；普希金文学院的一年级生须在首学期逐行读完《叶甫盖尼·奥涅金》；深空研究所要求所有项目申报书附加一项非功利性陈述。</span></p>
+    </div>
+    <div class="academic-grid">
+      <div class="academic-card fade-in">
+        <h3>岳麓书院</h3>
+        <p>两千年书院传统遇到二十一世纪的存在困境。庄周梦蝶实验室的课题：「如果梦中的自己拥有一段完整的人生，那你用什么标准来判断哪边是真实的？」</p>
+        <span class="tag">古代哲学</span>
+      </div>
+      <div class="academic-card fade-in">
+        <h3>普希金文学院</h3>
+        <p>不去论证俄罗斯文学为什么伟大。只是年复一年地让学生读那些在流放、病痛和严寒中写出来的句子，看他们的表情从困惑变成沉默。那种沉默本身就是答案。</p>
+        <span class="tag">俄罗斯文学</span>
+      </div>
+      <div class="academic-card fade-in">
+        <h3>川端康成研究院</h3>
+        <p>集中研究一种特殊的时间感受力：如何在樱花开始散落的那个瞬间，意识到它正在散落——并在此刻与意识到此刻之间，活过完整的一生。</p>
+        <span class="tag">日本文学</span>
+      </div>
+      <div class="academic-card fade-in">
+        <h3>齐奥尔科夫斯基深空研究所</h3>
+        <p>火箭方程是他们的语法，但真正的问题是修辞性的：一个学会了飞行的物种，是否因此有责任向着深空继续飞行？</p>
+        <span class="tag">深空科学</span>
+      </div>
+      <div class="academic-card fade-in">
+        <h3>计算机与数学基础研究所</h3><p>理论计算机科学、数理逻辑、计算复杂性理论与密码学。同时负责Shiroha OS的核心算法维护。本所的全部工作在一条附加原则下开展：任何一项算法的描述文档中须包含一句话，说明该算法在何种情况下可能失效——以及失效本身意味着什么。</p><span class="tag">计算机与数学</span>
+      </div>
+      <div class="academic-card fade-in">
+        <h3>禁忌研究档案</h3>
+        <p>部分课题设置了访问限制——不是因为危险，而是因为某些知识需要相匹配的准备。就像你不会让一个还没学会游泳的人去潜水。</p>
+        <span class="tag">受限访问</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:var(--space-xl);"><a href="pages/academic.html" class="btn btn-outline-dark">浏览完整学术体系</a></div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section class="section">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-admissions-label">招生</div>
+      <h2 class="section-title" data-i18n="admissions-title">我们寻找的不是"优秀"</h2>
+      <p class="section-subtitle">大多数大学在筛选适合它们的人。我们的问题反过来：什么样的人，适合一座以"保存人类可能性"为使命的学校？</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card fade-in">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>理想主义选拔</h3>
+        <p>没有标准答案的考试。我们会让你描述一件你想永远保存的事物——然后追问你为什么。大部分申请人会在第三次追问时停顿。我们在等那些停顿之后还能说下去的人。</p>
+      </div>
+      <div class="about-card fade-in">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6 C10 3, 14 3, 16 6 C14 12, 10 12, 8 6Z"/></svg>
+        </div>
+        <h3>白羽测试</h3>
+        <p>三个环节：描述一段你不愿遗忘的记忆；在一段陌生人的叙述中识别情感层次；最后回答——如果人类文明只能保留一样非实用的事物，你选什么。这不是智力测试，是共鸣测试。</p>
+      </div>
+      <div class="about-card fade-in">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/></svg>
+        </div>
+        <h3>「保存」奖学金</h3>
+        <p>覆盖全部学费与生活费。不问国籍，不看家庭背景。唯一的条件是你证明了一件事：你和这所学校在乎的是同一种东西。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:var(--space-xl);"><a href="pages/admissions.html" class="btn btn-outline-dark">了解招生详情</a></div>
+  </section>
+
+  <!-- FESTIVALS -->
+  <section class="section section-dark">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-life-label">校园生活</div>
+      <h2 class="section-title" data-i18n="life-title">一年有四季，四季有四问</h2>
+      <p class="section-subtitle"><span data-i18n="life-subtitle">季节在这里不只是气候。它是一套完整的追问体系，在每一个季节的转折点上，全校停下来，问一个值得花三个月去思考的问题。</span></p>
+    </div>
+    <div class="festivals-grid">
+      <a href="pages/campus-life.html#spring" class="festival-card fade-in" style="text-decoration:none;">
+        <div class="festival-card-image" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&q=80');"></div>
+        <div class="festival-card-overlay">
+          <span class="festival-season" style="color:#F48FB1;">春 · 高飞纪念日</span>
+          <h3>4月12日</h3>
+          <p>纪念人类第一次挣脱重力。那一天我们不比赛，只展示。每个人都带来自己在过去一年里制作的东西——不是最好的，是最诚实的。</p>
+        </div>
+      </a>
+      <a href="pages/campus-life.html#summer" class="festival-card fade-in" style="text-decoration:none;">
+        <div class="festival-card-image" style="background-image: url('https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600&q=80');"></div>
+        <div class="festival-card-overlay">
+          <span class="festival-season" style="color:#4DD0E1;">夏 · 夏末祭</span>
+          <h3>8月31日</h3>
+          <p>夏天最后一天，全校聚集在海边铁轨的尽头。日落时集体沉默一分钟——不是为了告别，是为了确认这一个夏天确实发生过。</p>
+        </div>
+      </a>
+      <a href="pages/campus-life.html#autumn" class="festival-card fade-in" style="text-decoration:none;">
+        <div class="festival-card-image" style="background-image: url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=600&q=80');"></div>
+        <div class="festival-card-overlay">
+          <span class="festival-season" style="color:#FFB74D;">秋 · 万叶祭</span>
+          <h3>10月20日</h3>
+          <p>从一棵千年银杏上摘下叶片，在上面写一句今年最重要的话。数万片叶子挂在同一棵树上，入夜后亮起微光——那是几千个普通人生命中最好的句子。</p>
+        </div>
+      </a>
+      <a href="pages/campus-life.html#winter" class="festival-card fade-in" style="text-decoration:none;">
+        <div class="festival-card-image" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80');"></div>
+        <div class="festival-card-overlay">
+          <span class="festival-season" style="color:#90CAF9;">冬 · 极夜节</span>
+          <h3>12月21日</h3>
+          <p>最长的一夜。莫斯科港的极光下，每人点一盏灯，讲一个关于温暖的故事。如果极光恰好出现，所有活动暂停，一起抬头。</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SHIROHA OS -->
+  <section class="section">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-os-label">Shiroha OS</div>
+      <h2 class="section-title" data-i18n="os-title">以一片羽毛命名的系统</h2>
+      <p class="section-subtitle">技术在这里有一个反常识的定位：它不负责加速，它负责保存。Shiroha OS 是白羽大学对「数字时代如何安放记忆」的完整回答。</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card fade-in">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+        </div>
+        <h3>学生身份</h3>
+        <p>每个Shiroha ID不只记录成绩，它跟踪的是你在白大的全部轨迹——你借过的书，写过的未完成诗，在百年信箱里给自己寄出的那封信。</p>
+      </div>
+      <div class="about-card fade-in">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h3>雪中图书馆</h3>
+        <p>位于应天府校区地下的物理空间，与覆盖三大校区的数字馆藏互为镜像。纸和屏幕，各自保护着对方无法保护的部分。</p>
+      </div>
+      <div class="about-card fade-in">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3>在线课程</h3>
+        <p>莫斯科港的极夜和鸟白岛的午后可以出现在同一堂课上。不是因为远程技术很先进——而是因为有些讨论，需要同时听到雪落下的声音和蝉鸣。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section section-cream">
+    <div class="quote-block fade-in">
+      <p class="quote-text">"这里不是错误。只是另一个没有发生的夏天。"</p>
+      <p class="quote-author">—— Shiroha OS 404 提示</p>
+    </div>
+  </section>
+
+  <!-- ALUMNI -->
+  <section class="section section-dark">
+    <div class="section-header fade-in">
+      <div class="section-label" data-i18n="sec-alumni-label">校友网络</div>
+      <h2 class="section-title" data-i18n="alumni-title">毕业证上写的不是"授予学位"，是"委托保管"</h2>
+      <p class="section-subtitle"><span data-i18n="alumni-subtitle">离开校园的人并没有离开这所大学。他们只是换了一种方式，在世界的不同角落里继续同一件事情。</span></p>
+    </div>
+    <div style="max-width:600px;margin:0 auto;text-align:center;" class="fade-in">
+      <p style="color:var(--text-on-dark-muted);line-height:1.9;margin-bottom:var(--space-xl);">
+        校友网络连接着分布在全球各地的研究者、作者、工程师和教师。有人在航天局计算轨道，有人在偏远的图书馆修复古籍，有人在中学课堂上讲《万叶集》。他们做的事情毫不相干，但你会惊讶地发现——他们引用的是同一句校训。
+      </p>
+      <a href="pages/alumni.html" class="btn btn-outline">加入校友网络</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SHIROHA UNIVERSITY</h3>
+        <p>为世界上所有的美好而战。<br>Fight for all the beauty in this world.</p>
+      </div>
+      <div class="footer-col"><h4 data-i18n="footer-explore">探索</h4><a href="#about" data-i18n="nav-about">关于白大</a><a href="pages/campuses.html" data-i18n="nav-campuses">三大校区</a><a href="pages/academic.html" data-i18n="nav-academic">学术体系</a><a href="pages/admissions.html" data-i18n="nav-admissions">招生信息</a></div>
+      <div class="footer-col"><h4 data-i18n="footer-campus">校园</h4><a href="pages/campus-life.html">校园生活</a><a href="pages/shiroha-os.html">Shiroha OS</a><a href="pages/alumni.html">校友网络</a><a href="pages/404.html">Lost Timeline</a></div>
+      <div class="footer-col"><h4 data-i18n="footer-lang">语言</h4><a href="#">中文</a><a href="#">English</a><a href="#">日本語</a><a href="#">Русский</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer-copy">&copy; 2048 Shiroha University. Shiroha OS v1.0</span>
+      <span class="footer-quote" data-i18n="footer-motto">为世界上所有的美好而战。</span>
+    </div>
+  </footer>
+
+  <!-- SHIROHA GUIDE -->
+  <div id="shiroha-guide">
+    <div class="shiroha-bubble"></div>
+    <div class="shiroha-avatar" title="鸣濑白羽">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 4 C13 8, 7 10, 7 15 C7 22, 16 28, 16 28 C16 28, 25 22, 25 15 C25 10, 19 8, 16 4Z" fill="none" stroke="white" stroke-width="1.2"/>
+        <circle cx="16" cy="14" r="1.5" fill="white"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

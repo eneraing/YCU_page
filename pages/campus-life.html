@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校园生活 | 白羽大学 Shiroha University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .life-hero { background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80'); }
+    .festival-section { padding: 5rem 0; }
+    .festival-section:nth-child(odd) { background: #fff; }
+    .festival-section:nth-child(even) { background: #FAF7F2; }
+    .festival-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .festival-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .festival-icon { font-size: 2.5rem; }
+    .festival-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; }
+    .festival-header .date { font-size: 0.9rem; color: #D32F2F; letter-spacing: 0.1em; }
+    .festival-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .festival-detail img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .activity-list { list-style: none; }
+    .activity-list li { padding: 0.6rem 0; padding-left: 1.5rem; position: relative; color: #555; line-height: 1.6; }
+    .activity-list li::before { content: '\25C6'; position: absolute; left: 0; color: #C9A96E; font-size: 0.7rem; top: 0.7rem; }
+    .philosophy-q { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: #1C3B5E; margin: 3rem 0 1rem; }
+    .clubs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .club-item { background: #fff; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .club-item .emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .club-item h4 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .club-item p { font-size: 0.8rem; color: #888; }
+    @media (max-width: 768px) { .festival-detail { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav id="main-nav" style="background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+    <a href="../index.html" class="nav-brand"><span class="nav-logo-text" style="color:#1a1a2e;">SHIROHA UNIVERSITY</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="nav-link" style="color:#555;">关于白大</a></li>
+      <li><a href="campuses.html" class="nav-link" style="color:#555;">三大校区</a></li>
+      <li><a href="academic.html" class="nav-link" style="color:#555;">学术体系</a></li>
+      <li><a href="admissions.html" class="nav-link" style="color:#555;">招生</a></li>
+      <li><a href="campus-life.html" class="nav-link" style="color:#1a1a2e;">校园生活</a></li>
+      <li><a href="shiroha-os.html" class="nav-link" style="color:#555;">Shiroha OS</a></li>
+      <li><a href="alumni.html" class="nav-link" style="color:#555;">校友网络</a></li>
+    </ul>
+    <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav-overlay"><button class="mobile-nav-close">&times;</button><a href="about.html">关于白大</a><a href="campuses.html">三大校区</a><a href="academic.html">学术体系</a><a href="admissions.html">招生</a><a href="campus-life.html">校园生活</a><a href="shiroha-os.html">Shiroha OS</a><a href="alumni.html">校友网络</a></div>
+
+  <section class="page-header life-hero"><div class="page-header-content"><h1>校园生活</h1><p>Campus Life</p></div></section>
+
+  <!-- Spring -->
+  <section class="festival-section" id="spring">
+    <div class="festival-content">
+      <div class="festival-header"><span class="festival-icon">🚀</span><div><h2>高飞纪念日</h2><div class="date">4月12日 · 春</div></div></div>
+      <div class="festival-detail">
+        <div>
+          <p style="font-size:1.1rem;color:#888;margin-bottom:1rem;">High Flight Memorial Day</p>
+          <p>1961年的这一天，加加林进入轨道，人类第一次从太空看到了地球的全貌。白羽大学不是在重复纪念那个技术成就，而是在追问它背后的情感——一个物种抬头看了一百万年，终于决定自己飞上去看看，这个决定本身意味着什么。</p>
+          <ul class="activity-list">
+            <li><strong>未来飞行博览会</strong>——不是航展，是每个人把自己过去一年里关于「飞」的想法做出来的展。有人带来模型火箭，有人带来一首关于鸟的诗，有人带来自己设计的机翼截面图，全都摆在同一片草地上</li>
+            <li><strong>「第一颗星」奖</strong>——不颁给最高、最快、最先进的。颁给那个让评委在想「是啊，我也想过飞这件事」的作品</li>
+            <li><strong>白羽夜航</strong>——日落之后，全岛关闭电力照明。每人提一盏小纸灯笼沿铁轨走到海边。从远处看，整个岛像一列正在升空的星群</li>
+          </ul>
+          <p style="margin-top:1rem;font-style:italic;color:#1C3B5E;">白羽广播：「以前的人类害怕天空。后来，他们发现天空也在等待他们。」</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&q=80" alt="高飞纪念日" loading="lazy">
+      </div>
+      <p class="philosophy-q">「我要去哪里？」—— 春之问</p>
+    </div>
+  </section>
+
+  <!-- Summer -->
+  <section class="festival-section" id="summer">
+    <div class="festival-content">
+      <div class="festival-header"><span class="festival-icon">🌊</span><div><h2>夏末祭</h2><div class="date">8月31日 · 夏</div></div></div>
+      <div class="festival-detail">
+        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600&q=80" alt="夏末祭" loading="lazy">
+        <div>
+          <p style="font-size:1.1rem;color:#888;margin-bottom:1rem;">End of Summer Festival</p>
+          <p>夏天结束的那个傍晚，全校不约而同地往海边聚集。这不是任何通知要求的——第一年有人去了，第二年去的人多了，到第十年这已经成了一条不需要写的校规。</p>
+          <ul class="activity-list">
+            <li><strong>铁轨走行</strong>——沿着海边铁轨走到底。没有起点线，没有终点计时。有人在半路停下来捡贝壳，有人走出去十分钟就坐在枕木上不动了。都没关系</li>
+            <li><strong>蝉时雨音乐会</strong>——不是人类演奏的音乐——是蝉。在蝉鸣最密集的那个小时，所有人停止说话，只听</li>
+            <li><strong>最后一缕阳光仪式</strong>——日落时分，全校静默一分钟。你可以闭上眼睛，也可以睁眼看着太阳消失在海平面上的那个确切的瞬间</li>
+            <li><strong>花火大会</strong>——在海面上施放的烟花。每一发升空之前，施放者会对它说一句话</li>
+          </ul>
+          <p style="margin-top:1rem;font-style:italic;color:#1C3B5E;">白羽：「今天也不要忘记观察天空。」</p>
+        </div>
+      </div>
+      <p class="philosophy-q">「我正在经历什么？」—— 夏之问</p>
+    </div>
+  </section>
+
+  <!-- Autumn -->
+  <section class="festival-section" id="autumn">
+    <div class="festival-content">
+      <div class="festival-header"><span class="festival-icon">🍂</span><div><h2>万叶祭</h2><div class="date">10月20日 · 秋</div></div></div>
+      <div class="festival-detail">
+        <div>
+          <p style="font-size:1.1rem;color:#888;margin-bottom:1rem;">The Festival of Thousand Leaves</p>
+          <p>这个节日的核心仪式极其简单：去银杏树下领一片叶子，在上面写一句话——今年对你最重要的一句话——然后挂回树上。为什么是「最重要」而不是「最正确」或「最聪明」？因为万叶祭的基础信念是：一个人的生命价值，不取决于他说了多少正确的话，而取决于他有没有在某个时刻，说出了只有他能说的那句话。</p>
+          <ul class="activity-list">
+            <li><strong>叶片寄语</strong>——写一句话，挂上万叶树。入夜后每片叶子会发出微弱的荧光。几千个普通人生命中最好的句子，在秋夜的银杏树下一起亮起来</li>
+            <li><strong>百年信箱</strong>——给十年后的自己写一封信。封存在Shiroha OS中。你写的时候窗外可能正在下雨，十年后收到信的那天可能也在下雨——没人知道。但信会准时寄到</li>
+            <li><strong>雪与叶文学夜</strong>——以「季节为什么会让人悲伤」为主题的通宵朗读会。可以读你写的，也可以读别人写的，也可以什么都不读，只是听</li>
+            <li><strong>未完成诗篇</strong>——提交一首没有结尾的诗。下一个人为你续写。续写的人可能来自不同的校区，说不同的母语，和你从未见过面</li>
+          </ul>
+          <p style="margin-top:1rem;font-style:italic;color:#1C3B5E;">白羽：「有些东西会凋零。但被记住的东西，不会真正消失。」</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=600&q=80" alt="万叶祭" loading="lazy">
+      </div>
+      <p class="philosophy-q">「我留下了什么？」—— 秋之问</p>
+    </div>
+  </section>
+
+  <!-- Winter -->
+  <section class="festival-section" id="winter">
+    <div class="festival-content">
+      <div class="festival-header"><span class="festival-icon">❄️</span><div><h2>极夜节</h2><div class="date">12月21日 · 冬</div></div></div>
+      <div class="festival-detail">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="极夜节" loading="lazy">
+        <div>
+          <p style="font-size:1.1rem;color:#888;margin-bottom:1rem;">Polar Night Festival</p>
+          <p>起源在莫斯科港。三个月的极夜里，人需要一种不依赖日光的方式来确认自己还在。极夜节就是那个确认仪式。</p>
+          <ul class="activity-list">
+            <li><strong>千灯仪式</strong>——每人在自己桌上或窗前点亮一盏小灯。不论材质——可以是蜡烛、是LED、是你用电池和回形针自己做的。重要的是：你在最长的夜晚里制造了一个光点</li>
+            <li><strong>极夜故事会</strong>——不讲恐怖故事，不讲悬疑故事。只讲温暖的。有真实发生的温暖，也有你希望发生但还没发生的温暖——两者同等有效</li>
+            <li><strong>极光观测</strong>——如果极光在活动期间出现，所有仪式暂停，全体在零下三十度的室外仰头。可能只持续几分钟，可能看了一整夜。没有人会提前离场</li>
+            <li><strong>致春天的信</strong>——给明年春分那天的自己写几句话。封存在莫斯科港研究塔的地下恒温箱里——那里的温度和明年的春天一样</li>
+          </ul>
+          <p style="margin-top:1rem;font-style:italic;color:#1C3B5E;">白羽：「外面很冷，不过这里一直有灯。」</p>
+        </div>
+      </div>
+      <p class="philosophy-q">「我如何坚持？」—— 冬之问</p>
+    </div>
+  </section>
+
+  <!-- Clubs -->
+  <section class="content-section">
+    <h2>学生社团</h2>
+    <p style="color:#555;margin-bottom:2rem;line-height:1.9;">八十余个社团。大多不设章程，不选社长，不开例会。它们的存在方式更像是一种约定：你在某个下午想做某件事，发现已经有人在做了，于是你坐下。</p>
+    <div class="clubs-grid">
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>未完诗稿研究会</h4><p>一张长桌，若干空白稿纸，和几支削得过尖的铅笔。每首诗只写四行。第五行留给下一个人。</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>夜间观测部</h4><p>云量低于三成时自动集合。无人通知。无人缺席。</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>纸与墨</h4><p>地点在雪中图书馆地下第二层。用镊子、放大镜和几乎无穷尽的耐心。一片书页可能需要三周。时间在这里以另一种速度流动。</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>八音盒工坊</h4><p>一学期，一架音乐盒，一支曲子。曲子必须是你在过去十二个月里最常不知不觉哼起的那一首。成品通常不准。不是因为工艺——是因为哼的时候就不准。</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>未明观测会</h4><p>每周三凌晨三点，莫斯科港观测台。不说话。只记录。天体的运动和人的呼吸被以同一种方式归档。</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>模型工程部</h4><p>发射前必须为它取一个名字。名字不必合理——但必须在发射后还能被人记住。迄今为止回收率：不足三成。继续率：百分之百。</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>水与叶</h4><p>中、日、俄三套茶具每周轮换。泡茶的人决定当周的语言。唯一的教条刻在一只茶托底部：「等。」</p></div>
+      <div class="club-item"><div class="emoji">&#x25E6;</div><h4>多幕剧社</h4><p>每年选一部原作。第一幕忠于文本，第二幕由普希金文学院的学生改编，第三幕交给川端康成研究院。第四幕的剧本在演出当天的日落之后才发到演员手中。</p></div>
+    </section></div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>SHIROHA UNIVERSITY</h3><p>为世界上所有的美好而战。</p></div>
+      <div class="footer-col"><h4>探索</h4><a href="about.html">关于白大</a><a href="campuses.html">三大校区</a><a href="academic.html">学术体系</a></div>
+      <div class="footer-col"><h4>校园</h4><a href="campus-life.html">校园生活</a><a href="shiroha-os.html">Shiroha OS</a><a href="alumni.html">校友网络</a></div>
+      <div class="footer-col"><h4>语言</h4><a href="#">中文</a><a href="#">English</a><a href="#">日本語</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2048 Shiroha University. Shiroha OS v1.0</span><span class="footer-quote">为世界上所有的美好而战。</span></div>
+  </footer>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

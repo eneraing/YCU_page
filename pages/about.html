@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于白大 | 白羽大学 Shiroha University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .about-hero { background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1920&q=80'); }
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: #C9A96E; opacity: 0.3; transform: translateX(-50%); }
+    .timeline-item { display: flex; align-items: flex-start; margin-bottom: 3rem; position: relative; }
+    .timeline-item:nth-child(odd) { flex-direction: row; }
+    .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+    .timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: #D32F2F; position: absolute; left: 50%; top: 8px; transform: translateX(-50%); z-index: 1; }
+    .timeline-content { width: 45%; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .timeline-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 0.3rem; }
+    .timeline-content .year { font-size: 0.8rem; color: #D32F2F; letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+    .timeline-content p { font-size: 0.9rem; color: #555; line-height: 1.7; }
+    .motto-display { text-align: center; padding: 6rem 2rem; background: #0F2440; color: #fff; margin: 2rem 0; position: relative; overflow: hidden; }
+    .motto-display::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(129,212,250,0.03) 0%, transparent 70%); pointer-events: none; }
+    .motto-frame { display: inline-block; max-width: 800px; position: relative; }
+    .motto-line-top, .motto-line-bot { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,169,110,0.4), transparent); margin: 2rem 0; }
+    .motto-text-wrap { padding: 1rem 0; }
+    .motto-cn { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: 0.15em; color: #C9A96E; margin-bottom: 1.2rem; font-weight: 300; line-height: 1.5; }
+    .motto-en { font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-style: italic; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .motto-jp { font-family: "Noto Sans JP", sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    .motto-ru { font-family: "PT Serif", serif; font-size: 0.9rem; font-style: italic; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
+    .motto-note { max-width: 580px; margin: 2.5rem auto 0; opacity: 0.5; line-height: 1.9; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .motto-display .section-label { margin-bottom: 2.5rem; }
+    
+    
+    @media (max-width: 768px) { .timeline::before { left: 20px; } .timeline-dot { left: 20px; } .timeline-item, .timeline-item:nth-child(even) { flex-direction: row; } .timeline-content { width: calc(100% - 60px); margin-left: 50px; } }
+  </style>
+</head>
+<body>
+  <nav id="main-nav" style="background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+    <a href="../index.html" class="nav-brand"><span class="nav-logo-text" style="color:#1a1a2e;">SHIROHA UNIVERSITY</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="nav-link" style="color:#1a1a2e;">关于白大</a></li>
+      <li><a href="campuses.html" class="nav-link" style="color:#555;">三大校区</a></li>
+      <li><a href="academic.html" class="nav-link" style="color:#555;">学术体系</a></li>
+      <li><a href="admissions.html" class="nav-link" style="color:#555;">招生</a></li>
+      <li><a href="campus-life.html" class="nav-link" style="color:#555;">校园生活</a></li>
+      <li><a href="shiroha-os.html" class="nav-link" style="color:#555;">Shiroha OS</a></li>
+      <li><a href="alumni.html" class="nav-link" style="color:#555;">校友网络</a></li>
+    </ul>
+    <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav-overlay"><button class="mobile-nav-close">&times;</button><a href="about.html">关于白大</a><a href="campuses.html">三大校区</a><a href="academic.html">学术体系</a><a href="admissions.html">招生</a><a href="campus-life.html">校园生活</a><a href="shiroha-os.html">Shiroha OS</a><a href="alumni.html">校友网络</a></div>
+
+  <section class="page-header about-hero"><div class="page-header-content"><h1>关于白大</h1><p>About Shiroha University</p></div></section>
+
+  <section class="content-section">
+    <h2 id="history">创校历史</h2>
+    <p>二十一世纪中叶，人类遇到了一道奇怪的算术题：我们掌握的数据量每一天都在翻倍，但能说清「自己是谁」的人却在减少。历史档案在数字化过程中被压缩成了关键词，传统技艺变成了博物馆里的视频简介，人们在社交媒体上记录了每一顿晚餐，却想不起上一次真正被什么东西打动是什么时候。</p>
+    <p>最先注意到这件事的，不是政治家，也不是科技公司。是四个彼此不相干的学者群体——一群在东京研究《万叶集》的文学研究者、莫斯科科学院里几个正在重新翻阅齐奥尔科夫斯基手稿的物理学家、长沙岳麓山上一些试图用现代语言翻译《庄子》的哲学家，以及国际深空探索联盟里那些每天盯着系外行星光谱却忍不住在笔记本空白处写诗的天文学家。</p>
+    <p>他们在不同的会议上碰面，发现彼此在说同一件事：人类正在失去一种能力——不是计算、不是推理、不是创新——而是「被感动」的能力。当一切都可以被解释，一切都被做了效率优化，那些解释不了的东西——一首让你在走廊里停下来的诗，一段你没有任何理由就是想记住的对话，一个你知道说出来别人会笑但你还是相信的念头——正在被当作系统垃圾清理掉。</p>
+    <p>他们决定做一件在那个时代看来极其不合时宜的事：建一所大学。不是培养更多工程师或管理者的大学，而是一所只做一件事的学校：为人类文明中那些「没有用但不可或缺」的部分提供最后的庇护。</p>
+
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="year">2048</div><h3>《存夏宣言》签署</h3><p>四方学者在应天府旧址汇聚。签署文件的名字来自一位日本学者的提议——他说，人类正在经历的，不是一个冬天，而是一个试图忘记夏天是什么样子的过程。</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="year">2050</div><h3>莫斯科港研究区启用</h3><p>北极圈内的深空前哨。选址理由出人意料：极夜的漫长黑暗是最好的观测条件，也是最残酷的生存环境——在这里工作的人，天然会思考「人为什么需要光」这种问题。</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="year">2053</div><h3>鸟白岛校区开放</h3><p>南方海岛上的新校区。川端康成研究院在此设立，理由简单到近乎任性：他们认为，有些关于时间的学问，只有在一个能听到蝉鸣的地方才能做好。</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="year">2056</div><h3>Shiroha OS 上线</h3><p>以白羽命名的内部系统。设计原则是反效率的：每一条记录都附带写入者的情感标注，每一次检索都会提醒你「这段记忆的主人在保存它时，窗外正在下雪」。</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="year">2060</div><h3>禁忌研究档案建立</h3><p>不是因为某些知识危险。是因为他们发现，有些问题的答案如果在一个错误的人生阶段被读到，会毁掉那个人的可能性。所以设置了一道门槛——不是为了阻挡，是为了等待。</p></div></div>
+    </div>
+  </section>
+
+  <div class="motto-display" id="motto">
+    <div class="motto-frame">
+      <div class="motto-line-top"></div>
+      <div class="motto-text-wrap">
+        <p class="motto-cn">为世界上所有的美好而战</p>
+        <p class="motto-en">Fight for all the beauty in this world.</p>
+        <p class="motto-jp">この世界のすべての美しさのために戦う。</p>
+        <p class="motto-ru">Сражаться за всю красоту этого мира.</p>
+      </div>
+      <div class="motto-line-bot"></div>
+    </div>
+    <p class="motto-note">这句校训起源于建校前夕的一场争论。有人主张安静地保存——一个动词，不加宾语，最后胜出的却是更激烈的版本——发言者只说了两句话：「这个时代不缺保存者，缺的是愿意站出来说'这东西值得被保护'的人」。「而我们恰好有一所学校。」</p>
+  </div>
+
+  <section class="content-section" id="shiroha" style="background:#FAF7F2;margin:0;max-width:none;padding:4rem 1rem;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <h2>白羽精神</h2>
+      <div class="content-grid-2">
+        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80" alt="白羽意象" loading="lazy" style="border-radius:8px;">
+        <div>
+          <p>鸣濑白羽曾经只是一个名字。</p>
+          <p>每所大学最终都会在某个时刻面临同一个选择：用一个抽象的符号来概括自己，还是冒一次险——用一个人。盾徽不会说错话，拉丁文格言不会在错误的时间出现在错误的地点。但一个人会。一个人会在冬天说「外面很冷，不过这里一直有灯」——这话在夏天说出来莫名其妙，在冬天却能让人停下脚步。白羽大学选了后者。不是因为它更安全，而是因为它更诚实。</p>
+          <p>一个愿意被人格代表的机构，本质上在说两件事。第一，我们不完整——如果我们是完整的，一句格言就够了。第二，我们渴望被理解——符号可以被解读，但只有人才会被倾听。白羽不提供答案。她站在那里，本身就构成一个问题：在这个越来越冷的宇宙里，一个人可以给另一个人什么？</p>
+          <p>她随季节换装、换语气、换台词。不是因为学校需要促销不同季度的校园活动。是因为同一个人对冬天的你和夏天的你说的话，本就不该一样。冬天你需要的是一盏灯，夏天你想听到的是「抬头看」。秋天她在银杏树下沉默地站很久，春天她忽然开始谈论飞行。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>SHIROHA UNIVERSITY</h3><p>为世界上所有的美好而战。</p></div>
+      <div class="footer-col"><h4>探索</h4><a href="about.html">关于白大</a><a href="campuses.html">三大校区</a><a href="academic.html">学术体系</a></div>
+      <div class="footer-col"><h4>校园</h4><a href="campus-life.html">校园生活</a><a href="shiroha-os.html">Shiroha OS</a><a href="alumni.html">校友网络</a></div>
+      <div class="footer-col"><h4>语言</h4><a href="#">中文</a><a href="#">English</a><a href="#">日本語</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2048 Shiroha University. Shiroha OS v1.0</span><span class="footer-quote">为世界上所有的美好而战。</span></div>
+  </footer>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
